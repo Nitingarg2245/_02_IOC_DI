@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Define a bean for an electricEngine class ,petrolEngine and Car class-->
+    <bean id="electricEngine" class="org.example.beans.ElectricEngine"/>
+    <bean id="petrolEngine" class="org.example.beans.petrolEngine"/>
+    <bean id="car" class="org.example.beans.Car">
+      <constructor-arg name="engine" ref="petrolEngine"/>
+      <property name="engine" ref="electricEngine"/>
+    </bean>
+
+
+
+</beans>
